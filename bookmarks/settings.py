@@ -25,7 +25,7 @@ SECRET_KEY = '+@33zt@-)nqn6tidxe8m-%pw!-a&n^r3)f)i0@58j^vig7k_#)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social_django',
+    'django_extensions',
+    'images.apps.ImagesConfig',
     
 ]
 
@@ -137,6 +140,13 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'account.authentication.EmailAuthBackend',
+    'social_core.backends.twitter.TwitterOAuth',
+    
+
 
 ]
+SOCIAL_AUTH_TWITTER_KEY = '2BEL8VtOF1yFdMTPdUouknvrf' # Twitter API Key
+SOCIAL_AUTH_TWITTER_SECRET = '21FVlTz4BLLYkumfPglYQNpARXs9lCkLKcDKiqshX5bc7uwq9i' # Twitter API Secret
+
+#bearer token AAAAAAAAAAAAAAAAAAAAAEYlFAEAAAAAkvfWOVXHj%2BOXJQa%2BwQEKY%2FcIwQ0%3DRpKhToaZpBFS2zAagXFL7cZNAIhcJYzFf2YwC9J504p6UWUlyc
 
