@@ -25,6 +25,8 @@ SECRET_KEY = '+@33zt@-)nqn6tidxe8m-%pw!-a&n^r3)f)i0@58j^vig7k_#)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+#THUMBNAIL_DEBUG = True
+
 ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 
 
@@ -151,3 +153,8 @@ SOCIAL_AUTH_TWITTER_SECRET = '21FVlTz4BLLYkumfPglYQNpARXs9lCkLKcDKiqshX5bc7uwq9i
 
 #bearer token AAAAAAAAAAAAAAAAAAAAAEYlFAEAAAAAkvfWOVXHj%2BOXJQa%2BwQEKY%2FcIwQ0%3DRpKhToaZpBFS2zAagXFL7cZNAIhcJYzFf2YwC9J504p6UWUlyc
 
+from django.urls import reverse_lazy
+ABSOLUTE_URL_OVERRIDES={
+    'auth.user': lambda u: reverse_lazy('user_detail',
+                                        args=[u.username])
+}
